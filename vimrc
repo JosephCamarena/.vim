@@ -110,7 +110,7 @@ let b:ale_linters = 'all'
 " Tell ale lint where the build directories are to find the json databases
 " used by clangtidy and clangcheck.
 let g:ale_c_build_dir_names = [
-      \'/usr/WS1/manny/libleos/build/',
+      \'/usr/WS1/manny/leos/build/',
       \]
 
 " clang and gcc in ale lint do not use the json databses, so must tell
@@ -118,13 +118,13 @@ let g:ale_c_build_dir_names = [
 let g:ale_cpp_clang_options = "
       \ -std=c++14 
       \ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wpedantic
-      \ -isystem /usr/WS1/manny/libleos/src/
+      \ -isystem /usr/WS1/manny/leos/src/
       \ -isystem /usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/
 			\"
 let g:ale_cpp_gcc_options  = "
       \ -std=c++14 
       \ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wpedantic
-      \ -isystem /usr/WS1/manny/libleos/src/
+      \ -isystem /usr/WS1/manny/leos/src/
       \ -isystem /usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/
       \ -isystem /usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/
 			\"
