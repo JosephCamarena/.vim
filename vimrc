@@ -110,8 +110,7 @@ let b:ale_linters = 'all'
 " Tell ale lint where the build directories are to find the json databases
 " used by clangtidy and clangcheck.
 let g:ale_c_build_dir_names = [
-      \'/g/g20/manny/proj/build/',
-      \'/g/g20/manny/meos/build/',
+      \'/usr/WS1/manny/meos/build/',
       \]
 
 " clang and gcc in ale lint do not use the json databses, so must tell
@@ -119,15 +118,17 @@ let g:ale_c_build_dir_names = [
 let g:ale_cpp_clang_options = "
       \ -std=c++14 
       \ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wpedantic
-      \ -isystem /g/g20/manny/meos/src
-      \ -isystem /g/g20/manny/meos/External/udunits/lib/
-      \ -isystem /usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/'"
+      \ -isystem /usr/WS1/manny/meos/src/
+      \ -isystem /usr/WS1/manny/meos/External/udunits/lib/
+      \ -isystem /usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/
+			\"
 let g:ale_cpp_gcc_options  = "
       \ -std=c++14 
       \ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wpedantic
-      \ -isystem /g/g20/manny/meos/src
-      \ -isystem /g/g20/manny/meos/External/udunits/lib/
-      \ -isystem /usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/'"
+      \ -isystem /usr/WS1/manny/meos/src/
+      \ -isystem /usr/WS1/manny/meos/External/udunits/lib/
+      \ -isystem /usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/
+			\"
 " ale fixers format and clean up C++ code
 let g:ale_fixers = {
 \         'cpp': [
