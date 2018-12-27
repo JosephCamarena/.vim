@@ -115,18 +115,14 @@ let g:ale_c_build_dir_names = [
 
 " clang and gcc in ale lint do not use the json databses, so must tell
 " them specific flags
-let g:ale_cpp_clang_options = "
+let g:ale_cpp_clang_options = join(["
       \ -std=c++14 
       \ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wpedantic
-      \ -isystem /usr/WS1/manny/sandbox/src/**
-      \ -isystem /usr/WS1/manny/sandbox/ext/udunits/lib/
-			\"
-let g:ale_cpp_gcc_options  = "
-      \ -std=c++14 
-      \ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wpedantic
-      \ -isystem /usr/WS1/manny/sandbox/src/**
-      \ -isystem /usr/WS1/manny/sandbox/ext/udunits/lib/
-			\"
+      \ -isystem /usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/
+			\", $PROJECT_INCLUDE_DIRS])
+
+let g:ale_cpp_gcc_options  = ale_cpp_clang_options
+
 " ale fixers format and clean up C++ code
 let g:ale_fixers = {
 \         'cpp': [

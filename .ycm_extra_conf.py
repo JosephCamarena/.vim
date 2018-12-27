@@ -82,6 +82,9 @@ get_python_inc(),
 '/usr/workspace/wsrzc/leos/toss_3_x86_64/gnu/include/',
 ]
 
+projectIncludes = os.environ['PROJECT_INCLUDE_DIRS'].split()
+flags += projectIncludes
+
 # Clang automatically sets the '-std=' flag to 'c++14' for MSVC 2015 or later,
 # which is required for compiling the standard library, and to 'c++11' for older
 # versions.
@@ -99,8 +102,7 @@ if platform.system() != 'Windows':
 #
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
-home_dir = '/g/g20/manny/'
-compilation_database_folder = home_dir + '/meos/build/'
+compilation_database_folder = ''
 
 if os.path.exists( compilation_database_folder ):
   database = ycm_core.CompilationDatabase( compilation_database_folder )
