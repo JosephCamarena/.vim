@@ -142,6 +142,9 @@ let g:ale_fixers = {
 " call ale fixers with ctrl+l
 nmap <C-l> <Plug>(ale_fix)
 
+" fixes backspace
+inoremap <silent><backspace> <C-O>:call Backspace()<CR>
+
 function Backspace() 
 
 	let line_length = strwidth(getline('.'))
@@ -169,5 +172,3 @@ function Backspace()
 	endif
 
 endfunction
-
-inoremap <silent><backspace> <C-O>:call Backspace()<CR>
