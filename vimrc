@@ -118,13 +118,13 @@ let g:ale_c_build_dir_names = [
 let g:ale_cpp_clang_options = "
       \ -std=c++14 
       \ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wpedantic
-      \ -isystem /usr/WS1/manny/sandbox/src/
+      \ -isystem /usr/WS1/manny/sandbox/src/**
       \ -isystem /usr/WS1/manny/sandbox/ext/udunits/lib/
 			\"
 let g:ale_cpp_gcc_options  = "
       \ -std=c++14 
       \ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wpedantic
-      \ -isystem /usr/WS1/manny/sandbox/src/
+      \ -isystem /usr/WS1/manny/sandbox/src/**
       \ -isystem /usr/WS1/manny/sandbox/ext/udunits/lib/
 			\"
 " ale fixers format and clean up C++ code
