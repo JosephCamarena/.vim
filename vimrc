@@ -142,9 +142,11 @@ inoremap <silent><backspace> <C-O>:call Backspace()<CR>
 function Backspace() 
 
 	let line_length = strwidth(getline('.'))
-	let current_pos = getcurpos()
-	let line_pos = current_pos[1]
-	let col_pos = current_pos[2]
+	"let current_pos = getcurpos()
+	"let line_pos = current_pos[1]
+	"let col_pos = current_pos[2]
+	let line_pos = line('.')
+	let col_pos = col('.')
 
 	" not in the beginning nor the end
 	if col_pos > 1 && col_pos != line_length
@@ -156,11 +158,11 @@ function Backspace()
 		startinsert! 
 	" the beginning of the line and not the first line
 	elseif col_pos == 1 && line_pos > 1
-		normal! kJx
-
 		if line_length == 0
+      normal! kJx
 			startinsert!
 		else 
+      normal! kJ
 			startinsert
 		endif
 	endif
